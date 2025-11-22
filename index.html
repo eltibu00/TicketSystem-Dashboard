@@ -12,51 +12,50 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 95%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        /* Login Screen */
-        .login-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-        }
-
-        .login-modal {
+        .header {
             background: white;
-            padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 450px;
-            width: 90%;
-        }
-
-        .login-modal h2 {
-            color: #667eea;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .login-modal p {
-            color: #666;
+            padding: 30px;
             margin-bottom: 30px;
-            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
         }
 
         .form-group {
@@ -67,7 +66,7 @@
             display: block;
             margin-bottom: 8px;
             color: #333;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .form-group input,
@@ -77,7 +76,7 @@
             padding: 12px;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 1em;
             transition: border-color 0.3s;
         }
 
@@ -88,10 +87,15 @@
             border-color: #667eea;
         }
 
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
         .radio-group {
             display: flex;
             gap: 20px;
-            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .radio-group label {
@@ -99,92 +103,22 @@
             align-items: center;
             gap: 8px;
             cursor: pointer;
+            font-weight: 400;
         }
 
-        /* Header */
-        .header {
-            background: white;
-            padding: 20px 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .header h1 {
-            color: #667eea;
-            font-size: 1.8em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .user-info {
-            text-align: right;
-        }
-
-        .user-info strong {
-            color: #333;
-            display: block;
-        }
-
-        .user-info small {
-            color: #666;
-        }
-
-        /* Navigation Tabs */
-        .nav-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .nav-tab {
-            background: white;
-            color: #667eea;
-            padding: 12px 24px;
-            border-radius: 10px;
+        .radio-group input[type="radio"] {
+            width: auto;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid transparent;
         }
 
-        .nav-tab:hover {
-            background: #f8f9fa;
-        }
-
-        .nav-tab.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Tab Content */
-        .tab-content {
-            display: none;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Buttons */
         .btn {
-            padding: 12px 24px;
+            padding: 15px 30px;
             border: none;
             border-radius: 8px;
+            font-size: 1.1em;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 14px;
         }
 
         .btn-primary {
@@ -197,440 +131,143 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-success {
-            background: #27ae60;
-            color: white;
-        }
-
-        .btn-success:hover {
-            background: #229954;
-        }
-
         .btn-secondary {
-            background: #95a5a6;
-            color: white;
+            background: #f0f0f0;
+            color: #333;
+            margin-right: 10px;
         }
 
         .btn-secondary:hover {
-            background: #7f8c8d;
+            background: #e0e0e0;
         }
 
-        .btn-danger {
-            background: #e74c3c;
-            color: white;
+        .ticket-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
         }
 
-        .button-group {
+        .ticket-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .ticket-header {
             display: flex;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
-        /* Metrics Cards */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .metric-card.urgent {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        }
-
-        .metric-card h3 {
-            font-size: 0.9em;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-
-        .metric-card .value {
-            font-size: 2.5em;
+        .ticket-id {
+            font-size: 1.3em;
             font-weight: 700;
-        }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 16px 14px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.95em;
-        }
-
-        td {
-            padding: 14px 12px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 0.9em;
-        }
-
-        tr:hover {
-            background: #f8f9fa;
-        }
-
-        /* Priority Badges */
-        .priority-urgent {
-            background: #e74c3c;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        .priority-normal {
-            background: #95a5a6;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        /* Status Badges */
-        .status-new {
-            background: #e74c3c;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .status-acknowledged {
-            background: #f39c12;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .status-assigned {
-            background: #3498db;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .status-inprogress {
-            background: #9b59b6;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .status-complete {
-            background: #1abc9c;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        .status-resolved {
-            background: #27ae60;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-
-        /* Urgent Section */
-        .urgent-section {
-            background: #ffebee;
-            border-left: 4px solid #e74c3c;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .urgent-section h3 {
-            color: #c0392b;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .normal-section {
-            margin-top: 30px;
-        }
-
-        .normal-section h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Loading Spinner */
-        .loading {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 50px;
-        }
-
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Messages */
-        .success-message {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            color: #155724;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-        }
-
-        .error-message {
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-        }
-
-        .info-message {
-            background: #d1ecf1;
-            border: 1px solid #bee5eb;
-            color: #0c5460;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-        }
-
-        /* Current Ticket Card (Driver) */
-        .current-ticket-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .current-ticket-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-
-        .ticket-info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .ticket-info-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .ticket-info-row strong {
-            opacity: 0.8;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 9999;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        .modal.active {
-            display: block;
-        }
-
-        .modal-content {
-            background: white;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        .modal-header h2 {
             color: #667eea;
         }
 
-        .close-btn {
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #95a5a6;
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
         }
 
-        .close-btn:hover {
-            color: #333;
-        }
+        .badge-new { background: #ffebee; color: #c62828; }
+        .badge-acknowledged { background: #fff9c4; color: #f57f17; }
+        .badge-assigned { background: #ffe0b2; color: #e65100; }
+        .badge-inprogress { background: #e3f2fd; color: #1565c0; }
+        .badge-complete { background: #f3e5f5; color: #6a1b9a; }
+        .badge-resolved { background: #e8f5e9; color: #2e7d32; }
 
-        /* Timeline */
-        .timeline {
-            margin-top: 20px;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            padding-left: 20px;
-            border-left: 3px solid #667eea;
-        }
-
-        .timeline-icon {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #667eea;
+        .badge-urgent {
+            background: #ff1744;
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8em;
-            flex-shrink: 0;
-        }
-
-        .timeline-content {
-            flex: 1;
-        }
-
-        .timeline-content strong {
-            color: #333;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .timeline-content small {
-            color: #666;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .nav-tabs {
-                flex-direction: column;
-            }
-
-            .nav-tab {
-                width: 100%;
-            }
-
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            table {
-                font-size: 0.85em;
-            }
-
-            th, td {
-                padding: 10px 8px;
-            }
-        }
-
-        /* Alert Banner */
-        .alert-banner {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+            50% { opacity: 0.7; }
         }
 
-        .alert-banner h4 {
+        .ticket-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-size: 0.85em;
+            color: #666;
             margin-bottom: 5px;
         }
 
-        /* Age Warning Colors */
-        tr.age-warning-yellow {
-            background: #fff9e6 !important;
+        .info-value {
+            font-weight: 600;
+            color: #333;
         }
 
-        tr.age-warning-orange {
-            background: #ffe6cc !important;
+        .timeline {
+            border-left: 3px solid #667eea;
+            padding-left: 20px;
+            margin-top: 20px;
         }
 
-        tr.age-warning-red {
-            background: #ffebee !important;
+        .timeline-item {
+            margin-bottom: 15px;
+            position: relative;
         }
 
-        /* Empty State */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+
+        .timeline-item.completed::before {
+            background: #4caf50;
+        }
+
+        .timeline-label {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .timeline-value {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
         .empty-state {
             text-align: center;
             padding: 60px 20px;
-            color: #95a5a6;
+            color: #999;
         }
 
         .empty-state-icon {
@@ -638,1294 +275,381 @@
             margin-bottom: 20px;
         }
 
-        .empty-state h3 {
-            color: #7f8c8d;
-            margin-bottom: 10px;
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .ticket-info {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Login Screen -->
-        <div class="login-overlay" id="loginScreen">
-            <div class="login-modal">
-                <h2>🎫 Inventory Control Ticket System</h2>
-                <p>Please login to continue</p>
-                <form id="loginForm" onsubmit="handleLogin(event)">
-                    <div class="form-group">
-                        <label>Name *</label>
-                        <input type="text" id="loginName" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email *</label>
-                        <input type="email" id="loginEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Role *</label>
-                        <select id="loginRole" required>
-                            <option value="">Select your role...</option>
-                            <option value="requestor">Requestor</option>
-                            <option value="clerk">Inventory Control Clerk</option>
-                            <option value="driver">Driver</option>
-                            <option value="manager">Manager</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
-                </form>
-            </div>
+        <div class="header">
+            <h1>🎫 Inventory Control Ticket System</h1>
+            <p>Submit and track inventory control requests</p>
         </div>
 
-        <!-- Main App (Hidden until login) -->
-        <div id="mainApp" style="display: none;">
-            <!-- Header -->
-            <div class="header">
-                <h1>🎫 Inventory Control Ticket System</h1>
-                <div class="user-info">
-                    <strong id="userName"></strong>
-                    <small id="userRole"></small>
-                    <button class="btn btn-secondary" onclick="logout()" style="margin-top: 10px;">Logout</button>
+        <div id="loginSection" class="card">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="loginName">Your Name *</label>
+                <input type="text" id="loginName" placeholder="Roberto Tiburcio" required>
+            </div>
+            <div class="form-group">
+                <label for="loginEmail">Email *</label>
+                <input type="email" id="loginEmail" placeholder="your.name@staciamericas.com" required>
+            </div>
+            <button class="btn btn-primary" onclick="handleLogin()">Login</button>
+        </div>
+
+        <div id="dashboardSection" class="hidden">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <h2 style="margin: 0; border: none; padding: 0;">Welcome, <span id="userName"></span>!</h2>
+                        <p style="color: #666; margin-top: 5px;"><span id="userEmail"></span></p>
+                    </div>
+                    <button class="btn btn-secondary" onclick="handleLogout()">Logout</button>
                 </div>
             </div>
 
-            <!-- Navigation (role-based) -->
-            <div class="nav-tabs" id="navTabs"></div>
+            <div class="card">
+                <h2>📝 Submit New Request</h2>
+                <form id="newTicketForm">
+                    <div class="form-group">
+                        <label for="client">Client *</label>
+                        <select id="client" required>
+                            <option value="">Select client...</option>
+                        </select>
+                    </div>
 
-            <!-- Tab Contents -->
-            <div id="tabsContainer"></div>
+                    <div class="form-group">
+                        <label for="department">Department *</label>
+                        <select id="department" required>
+                            <option value="">Select department...</option>
+                            <option value="Ecom">Ecom</option>
+                            <option value="B2B">B2B</option>
+                            <option value="Kitting">Kitting</option>
+                            <option value="Receiving">Receiving</option>
+                            <option value="Shipping">Shipping</option>
+                            <option value="Returns">Returns</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Request Type *</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="requestType" value="Replenishment" required>
+                                Replenishment
+                            </label>
+                            <label>
+                                <input type="radio" name="requestType" value="Cycle Count" required>
+                                Cycle Count
+                            </label>
+                            <label>
+                                <input type="radio" name="requestType" value="Supplies Needed" required>
+                                Supplies Needed
+                            </label>
+                            <label>
+                                <input type="radio" name="requestType" value="Other" required>
+                                Other
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location/Item *</label>
+                        <input type="text" id="location" placeholder="Aisle 5B, Bin 23" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="text" id="quantity" placeholder="50 units">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Priority *</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="priority" value="Normal" checked required>
+                                Normal
+                            </label>
+                            <label>
+                                <input type="radio" name="priority" value="Urgent" required>
+                                🔴 Urgent
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" placeholder="Provide details about your request..." required></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('newTicketForm').reset()">Clear</button>
+                    <button type="submit" class="btn btn-primary">🎫 Submit Request</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>📋 My Tickets</h2>
+                <div id="myTicketsContainer">
+                    <div class="loading">Loading your tickets...</div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Configuration
         const CONFIG = {
-            APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbz6FLaR2iDOvEDVcAx66fj6Z3Oj9zu3J8tN3qNH7wAyfJDZd5AlS7ZOEZRtwfg6xzTgHQ/exec',
-            user: {
-                name: '',
-                email: '',
-                role: ''
-            }
+            APPS_SCRIPT_URL: 'YOUR_APPS_SCRIPT_URL_HERE',
+            user: { name: '', email: '', role: 'requestor' }
         };
 
-        // Login Handler
-        function handleLogin(event) {
-            event.preventDefault();
-            
-            CONFIG.user.name = document.getElementById('loginName').value;
-            CONFIG.user.email = document.getElementById('loginEmail').value;
-            CONFIG.user.role = document.getElementById('loginRole').value;
-            
-            document.getElementById('loginScreen').style.display = 'none';
-            document.getElementById('mainApp').style.display = 'block';
-            
-            document.getElementById('userName').textContent = CONFIG.user.name;
-            document.getElementById('userRole').textContent = CONFIG.user.role.charAt(0).toUpperCase() + CONFIG.user.role.slice(1);
-            
-            initializeApp();
-        }
-
-        function logout() {
-            CONFIG.user = { name: '', email: '', role: '' };
-            document.getElementById('loginScreen').style.display = 'flex';
-            document.getElementById('mainApp').style.display = 'none';
-            document.getElementById('loginForm').reset();
-        }
-
-        // Initialize App based on role
-        function initializeApp() {
-            const role = CONFIG.user.role;
-            
-            if (role === 'requestor') {
-                initRequestorDashboard();
-            } else if (role === 'clerk') {
-                initClerkDashboard();
-            } else if (role === 'driver') {
-                initDriverDashboard();
-            } else if (role === 'manager') {
-                initManagerDashboard();
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedUser = localStorage.getItem('ticketSystemUser');
+            if (savedUser) {
+                CONFIG.user = JSON.parse(savedUser);
+                showDashboard();
             }
-        }
+            document.getElementById('newTicketForm').addEventListener('submit', handleSubmitTicket);
+        });
 
-        // ====================================================================
-        // REQUESTOR DASHBOARD
-        // ====================================================================
+        function handleLogin() {
+            const name = document.getElementById('loginName').value.trim();
+            const email = document.getElementById('loginEmail').value.trim();
 
-        function initRequestorDashboard() {
-            const navTabs = document.getElementById('navTabs');
-            const tabsContainer = document.getElementById('tabsContainer');
-            
-            navTabs.innerHTML = `
-                <div class="nav-tab active" onclick="switchTab('my-tickets')">My Tickets</div>
-                <div class="nav-tab" onclick="switchTab('new-request')">New Request</div>
-            `;
-            
-            tabsContainer.innerHTML = `
-                <!-- My Tickets Tab -->
-                <div id="my-tickets" class="tab-content active">
-                    <h2 style="color: #667eea; margin-bottom: 20px;">📋 My Tickets</h2>
-                    
-                    <div class="metrics-grid">
-                        <div class="metric-card">
-                            <h3>Active Tickets</h3>
-                            <div class="value" id="requestorActiveCount">-</div>
-                        </div>
-                        <div class="metric-card" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
-                            <h3>Resolved Today</h3>
-                            <div class="value" id="requestorResolvedCount">-</div>
-                        </div>
-                    </div>
-
-                    <div class="button-group" style="margin-bottom: 20px;">
-                        <button class="btn btn-primary" onclick="loadRequestorTickets()">🔄 Refresh</button>
-                        <button class="btn btn-success" onclick="switchTab('new-request')">+ New Request</button>
-                    </div>
-                    
-                    <div class="loading" id="requestorLoading">
-                        <div class="spinner"></div>
-                        <p style="margin-top: 15px;">Loading your tickets...</p>
-                    </div>
-                    
-                    <div id="requestorTicketsContent" style="display: none;">
-                        <h3 style="color: #667eea; margin-top: 30px;">Active Tickets</h3>
-                        <div id="requestorActiveTickets"></div>
-                        
-                        <h3 style="color: #27ae60; margin-top: 30px;">Resolved Tickets</h3>
-                        <div id="requestorResolvedTickets"></div>
-                    </div>
-                </div>
-
-                <!-- New Request Tab -->
-                <div id="new-request" class="tab-content">
-                    <h2 style="color: #667eea; margin-bottom: 20px;">🎫 New Inventory Request</h2>
-                    
-                    <form id="newRequestForm" onsubmit="submitNewRequest(event)">
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" id="reqName" value="${CONFIG.user.name}" readonly style="background: #f5f5f5;">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Department *</label>
-                            <input type="text" id="reqDepartment" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Request Type *</label>
-                            <div class="radio-group">
-                                <label>
-                                    <input type="radio" name="requestType" value="Replenishment" required> Replenishment
-                                </label>
-                                <label>
-                                    <input type="radio" name="requestType" value="Cycle Count" required> Cycle Count
-                                </label>
-                                <label>
-                                    <input type="radio" name="requestType" value="Other" required> Other
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Location/Item *</label>
-                            <input type="text" id="reqLocation" placeholder="e.g., Aisle 5B, Bin 23" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Quantity</label>
-                            <input type="text" id="reqQuantity" placeholder="e.g., 50 units">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Priority *</label>
-                            <div class="radio-group">
-                                <label>
-                                    <input type="radio" name="priority" value="Normal" checked> ⚪ Normal
-                                </label>
-                                <label>
-                                    <input type="radio" name="priority" value="Urgent"> 🔴 Urgent
-                                </label>
-                            </div>
-                            <small style="color: #666; display: block; margin-top: 10px;">
-                                ⚠️ Use "Urgent" only when truly critical!
-                            </small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Description/Details *</label>
-                            <textarea id="reqDescription" rows="4" required placeholder="Provide details about your request..."></textarea>
-                        </div>
-                        
-                        <div class="button-group">
-                            <button type="submit" class="btn btn-primary">🎫 Submit Request</button>
-                            <button type="button" class="btn btn-secondary" onclick="document.getElementById('newRequestForm').reset()">Clear Form</button>
-                        </div>
-                    </form>
-                    
-                    <div class="success-message" id="submitSuccess" style="display: none;"></div>
-                    <div class="error-message" id="submitError" style="display: none;"></div>
-                </div>
-            `;
-            
-            loadRequestorTickets();
-        }
-
-        async function loadRequestorTickets() {
-            document.getElementById('requestorLoading').style.display = 'flex';
-            document.getElementById('requestorTicketsContent').style.display = 'none';
-            
-            try {
-                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getRequestorTickets&requestorEmail=${encodeURIComponent(CONFIG.user.email)}`);
-                const data = await response.json();
-                
-                document.getElementById('requestorActiveCount').textContent = data.activeTickets.length;
-                document.getElementById('requestorResolvedCount').textContent = data.resolvedTickets.length;
-                
-                displayRequestorTickets(data.activeTickets, 'requestorActiveTickets');
-                displayRequestorTickets(data.resolvedTickets, 'requestorResolvedTickets');
-                
-                document.getElementById('requestorLoading').style.display = 'none';
-                document.getElementById('requestorTicketsContent').style.display = 'block';
-            } catch (error) {
-                console.error('Error loading tickets:', error);
-                document.getElementById('requestorLoading').style.display = 'none';
-                alert('Error loading tickets. Please check your Apps Script URL configuration.');
-            }
-        }
-
-        function displayRequestorTickets(tickets, containerId) {
-            const container = document.getElementById(containerId);
-            
-            if (tickets.length === 0) {
-                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><h3>No tickets found</h3></div>';
+            if (!name || !email) {
+                alert('Please enter your name and email');
                 return;
             }
-            
-            let html = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ticket #</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                            <th>Priority</th>
-                            <th>Status</th>
-                            <th>Assigned To</th>
-                            <th>Age</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-            
-            tickets.forEach(ticket => {
-                const priorityClass = ticket.priority === 'Urgent' ? 'priority-urgent' : 'priority-normal';
-                const statusClass = `status-${ticket.status.toLowerCase().replace(' ', '')}`;
-                
-                html += `
-                    <tr>
-                        <td><strong>${ticket.ticketID}</strong></td>
-                        <td>${ticket.requestType}</td>
-                        <td>${ticket.location}</td>
-                        <td><span class="${priorityClass}">${ticket.priority}</span></td>
-                        <td><span class="${statusClass}">${ticket.status}</span></td>
-                        <td>${ticket.assignedTo || 'Unassigned'}</td>
-                        <td>${ticket.age}</td>
-                        <td><button class="btn btn-secondary" onclick="viewTicketDetails('${ticket.ticketID}')" style="padding: 6px 12px; font-size: 0.85em;">View</button></td>
-                    </tr>
-                `;
-            });
-            
-            html += '</tbody></table>';
-            container.innerHTML = html;
+
+            if (!validateStaciaEmail(email)) return;
+
+            CONFIG.user.name = name;
+            CONFIG.user.email = email;
+            localStorage.setItem('ticketSystemUser', JSON.stringify(CONFIG.user));
+            showDashboard();
         }
 
-        async function submitNewRequest(event) {
-            event.preventDefault();
-            
-            const requestType = document.querySelector('input[name="requestType"]:checked').value;
-            const priority = document.querySelector('input[name="priority"]:checked').value;
-            
-            const data = {
-                action: 'submitTicket',
+        function validateStaciaEmail(email) {
+            if (!email.toLowerCase().endsWith('@staciamericas.com')) {
+                alert('❌ Invalid Email\n\nOnly @staciamericas.com emails are allowed.');
+                return false;
+            }
+            return true;
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('ticketSystemUser');
+            CONFIG.user = { name: '', email: '', role: 'requestor' };
+            document.getElementById('loginSection').classList.remove('hidden');
+            document.getElementById('dashboardSection').classList.add('hidden');
+            document.getElementById('loginName').value = '';
+            document.getElementById('loginEmail').value = '';
+        }
+
+        function showDashboard() {
+            document.getElementById('loginSection').classList.add('hidden');
+            document.getElementById('dashboardSection').classList.remove('hidden');
+            document.getElementById('userName').textContent = CONFIG.user.name;
+            document.getElementById('userEmail').textContent = CONFIG.user.email;
+            loadConfigData();
+            loadMyTickets();
+        }
+
+        async function loadConfigData() {
+            try {
+                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getConfig`);
+                const data = await response.json();
+                const clientSelect = document.getElementById('client');
+                data.clients.forEach(client => {
+                    const option = document.createElement('option');
+                    option.value = client;
+                    option.textContent = client;
+                    clientSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading config:', error);
+            }
+        }
+
+        async function handleSubmitTicket(e) {
+            e.preventDefault();
+
+            const formData = {
                 requestorName: CONFIG.user.name,
                 requestorEmail: CONFIG.user.email,
-                department: document.getElementById('reqDepartment').value,
-                requestType: requestType,
-                location: document.getElementById('reqLocation').value,
-                quantity: document.getElementById('reqQuantity').value,
-                priority: priority,
-                description: document.getElementById('reqDescription').value
+                client: document.getElementById('client').value,
+                department: document.getElementById('department').value,
+                requestType: document.querySelector('input[name="requestType"]:checked').value,
+                location: document.getElementById('location').value,
+                quantity: document.getElementById('quantity').value,
+                priority: document.querySelector('input[name="priority"]:checked').value,
+                description: document.getElementById('description').value
             };
-            
+
             try {
-                const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
+                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=submitTicket`, {
                     method: 'POST',
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(formData)
                 });
                 
                 const result = await response.json();
-                
+
                 if (result.success) {
-                    document.getElementById('submitSuccess').innerHTML = `
-                        <strong>✅ Success!</strong> Your request has been submitted.<br>
-                        <strong>Ticket #: ${result.ticketID}</strong><br>
-                        You can track its progress in the "My Tickets" tab.
-                    `;
-                    document.getElementById('submitSuccess').style.display = 'block';
-                    document.getElementById('submitError').style.display = 'none';
-                    document.getElementById('newRequestForm').reset();
-                    
-                    setTimeout(() => {
-                        switchTab('my-tickets');
-                        loadRequestorTickets();
-                    }, 2000);
+                    alert(`✅ Ticket Created!\n\nTicket ID: ${result.ticketID}\n\nYou can track it in "My Tickets" below.`);
+                    document.getElementById('newTicketForm').reset();
+                    loadMyTickets();
                 } else {
-                    document.getElementById('submitError').innerHTML = `<strong>❌ Error:</strong> ${result.message}`;
-                    document.getElementById('submitError').style.display = 'block';
-                    document.getElementById('submitSuccess').style.display = 'none';
+                    alert('❌ Error creating ticket. Please try again.');
                 }
             } catch (error) {
-                console.error('Error submitting request:', error);
-                document.getElementById('submitError').innerHTML = '<strong>❌ Error:</strong> Failed to submit request. Please try again.';
-                document.getElementById('submitError').style.display = 'block';
+                console.error('Error submitting ticket:', error);
+                alert('❌ Error submitting ticket. Please check your connection.');
             }
         }
 
-        // ====================================================================
-        // CLERK DASHBOARD (Continued in next part)
-        // ====================================================================
+        async function loadMyTickets() {
+            const container = document.getElementById('myTicketsContainer');
+            container.innerHTML = '<div class="loading">Loading your tickets...</div>';
 
-        function initClerkDashboard() {
-            const navTabs = document.getElementById('navTabs');
-            const tabsContainer = document.getElementById('tabsContainer');
-            
-            navTabs.innerHTML = `
-                <div class="nav-tab active" onclick="switchTab('clerk-queue')">Queue Management</div>
-            `;
-            
-            tabsContainer.innerHTML = `
-                <div id="clerk-queue" class="tab-content active">
-                    <h2 style="color: #667eea; margin-bottom: 20px;">📋 Inventory Control Queue</h2>
-                    
-                    <div class="metrics-grid">
-                        <div class="metric-card">
-                            <h3>New Tickets</h3>
-                            <div class="value" id="clerkNewCount">-</div>
-                        </div>
-                        <div class="metric-card urgent">
-                            <h3>🔥 Urgent</h3>
-                            <div class="value" id="clerkUrgentCount">-</div>
-                        </div>
-                        <div class="metric-card">
-                            <h3>Acknowledged</h3>
-                            <div class="value" id="clerkAckCount">-</div>
-                        </div>
-                        <div class="metric-card">
-                            <h3>Assigned</h3>
-                            <div class="value" id="clerkAssignedCount">-</div>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary" onclick="loadClerkQueue()" style="margin-bottom: 20px;">🔄 Refresh Queue</button>
-                    
-                    <div class="loading" id="clerkLoading">
-                        <div class="spinner"></div>
-                        <p style="margin-top: 15px;">Loading queue...</p>
-                    </div>
-                    
-                    <div id="clerkQueueContent" style="display: none;">
-                        <!-- Urgent Alert Banner -->
-                        <div id="urgentAlert" style="display: none;"></div>
-                        
-                        <!-- New Tickets Section -->
-                        <div id="newTicketsSection"></div>
-                        
-                        <!-- Acknowledged Tickets Section -->
-                        <div id="acknowledgedTicketsSection"></div>
-                        
-                        <!-- Assigned Tickets Section -->
-                        <div id="assignedTicketsSection"></div>
-                        
-                        <!-- In Progress Tickets Section -->
-                        <div id="inProgressTicketsSection"></div>
-                    </div>
-                </div>
-            `;
-            
-            loadClerkQueue();
-        }
-
-        async function loadClerkQueue() {
-            document.getElementById('clerkLoading').style.display = 'flex';
-            document.getElementById('clerkQueueContent').style.display = 'none';
-            
             try {
-                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getClerkQueue`);
+                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getRequestorTickets&email=${CONFIG.user.email}`);
                 const data = await response.json();
-                
-                // Update metrics
-                document.getElementById('clerkNewCount').textContent = data.newTickets.length;
-                document.getElementById('clerkUrgentCount').textContent = data.urgentCount;
-                document.getElementById('clerkAckCount').textContent = data.acknowledgedTickets.length;
-                document.getElementById('clerkAssignedCount').textContent = data.assignedTickets.length;
-                
-                // Show urgent alert if needed
-                if (data.urgentCount > 0) {
-                    document.getElementById('urgentAlert').innerHTML = `
-                        <div class="alert-banner">
-                            <div>
-                                <h4>⚠️ URGENT TICKETS PENDING</h4>
-                                <p>${data.urgentCount} urgent request(s) require immediate attention</p>
-                            </div>
-                            <button class="btn btn-primary" style="background: white; color: #e74c3c;">Process Now</button>
+
+                if (data.tickets && data.tickets.length > 0) {
+                    container.innerHTML = data.tickets.map(ticket => createTicketCard(ticket)).join('');
+                } else {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-state-icon">📭</div>
+                            <h3>No Tickets Yet</h3>
+                            <p>Submit your first request using the form above!</p>
                         </div>
                     `;
-                    document.getElementById('urgentAlert').style.display = 'block';
-                } else {
-                    document.getElementById('urgentAlert').style.display = 'none';
-                }
-                
-                // Display ticket sections
-                displayClerkNewTickets(data.newTickets);
-                displayClerkAcknowledgedTickets(data.acknowledgedTickets);
-                displayClerkAssignedTickets(data.assignedTickets);
-                displayClerkInProgressTickets(data.inProgressTickets);
-                
-                document.getElementById('clerkLoading').style.display = 'none';
-                document.getElementById('clerkQueueContent').style.display = 'block';
-            } catch (error) {
-                console.error('Error loading queue:', error);
-                document.getElementById('clerkLoading').style.display = 'none';
-                alert('Error loading queue. Please check your configuration.');
-            }
-        }
-
-        function displayClerkNewTickets(tickets) {
-            const container = document.getElementById('newTicketsSection');
-            
-            const urgentTickets = tickets.filter(t => t.priority === 'Urgent');
-            const normalTickets = tickets.filter(t => t.priority !== 'Urgent');
-            
-            let html = '';
-            
-            // Urgent Section
-            if (urgentTickets.length > 0) {
-                html += `
-                    <div class="urgent-section">
-                        <h3>🔥 URGENT REQUESTS (${urgentTickets.length}) - PROCESS IMMEDIATELY</h3>
-                        ${generateTicketTable(urgentTickets, 'ack', true)}
-                    </div>
-                `;
-            }
-            
-            // Normal Section
-            if (normalTickets.length > 0) {
-                html += `
-                    <div class="normal-section">
-                        <h3>📋 NORMAL REQUESTS (${normalTickets.length}) - First In First Served</h3>
-                        ${generateTicketTable(normalTickets, 'ack', false)}
-                    </div>
-                `;
-            }
-            
-            if (tickets.length === 0) {
-                html = '<div class="empty-state"><div class="empty-state-icon">✅</div><h3>No new tickets in queue</h3><p>All caught up!</p></div>';
-            }
-            
-            container.innerHTML = html;
-        }
-
-        function displayClerkAcknowledgedTickets(tickets) {
-            const container = document.getElementById('acknowledgedTicketsSection');
-            
-            if (tickets.length === 0) {
-                container.innerHTML = '';
-                return;
-            }
-            
-            let html = `
-                <div class="normal-section">
-                    <h3>✅ ACKNOWLEDGED (${tickets.length}) - Ready to Assign</h3>
-                    ${generateTicketTable(tickets, 'assign', false)}
-                </div>
-            `;
-            
-            container.innerHTML = html;
-        }
-
-        function displayClerkAssignedTickets(tickets) {
-            const container = document.getElementById('assignedTicketsSection');
-            
-            if (tickets.length === 0) {
-                container.innerHTML = '';
-                return;
-            }
-            
-            let html = `
-                <div class="normal-section">
-                    <h3>🚚 ASSIGNED (${tickets.length}) - Waiting for Driver</h3>
-                    ${generateTicketTable(tickets, 'view', false)}
-                </div>
-            `;
-            
-            container.innerHTML = html;
-        }
-
-        function displayClerkInProgressTickets(tickets) {
-            const container = document.getElementById('inProgressTicketsSection');
-            
-            if (tickets.length === 0) {
-                container.innerHTML = '';
-                return;
-            }
-            
-            let html = `
-                <div class="normal-section">
-                    <h3>⚡ IN PROGRESS (${tickets.length}) - Driver Working</h3>
-                    ${generateTicketTable(tickets, 'view', false)}
-                </div>
-            `;
-            
-            container.innerHTML = html;
-        }
-
-        function generateTicketTable(tickets, actionType, isUrgent) {
-            let html = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ticket #</th>
-                            <th>Requestor</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                            <th>Priority</th>
-                            <th>Age</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-            
-            tickets.forEach(ticket => {
-                const priorityClass = ticket.priority === 'Urgent' ? 'priority-urgent' : 'priority-normal';
-                let rowClass = '';
-                
-                // Age-based highlighting for urgent tickets
-                if (isUrgent && ticket.priority === 'Urgent') {
-                    const ageMinutes = parseAgeToMinutes(ticket.age);
-                    if (ageMinutes > 30) rowClass = 'age-warning-red';
-                    else if (ageMinutes > 15) rowClass = 'age-warning-orange';
-                    else rowClass = 'age-warning-yellow';
-                }
-                
-                let actions = '';
-                if (actionType === 'ack') {
-                    actions = `<button class="btn btn-success" onclick="acknowledgeTicket('${ticket.ticketID}')" style="padding: 6px 12px; font-size: 0.85em;">Acknowledge</button>`;
-                } else if (actionType === 'assign') {
-                    actions = `<button class="btn btn-primary" onclick="showAssignModal('${ticket.ticketID}')" style="padding: 6px 12px; font-size: 0.85em;">Assign Driver</button>`;
-                } else {
-                    actions = `<button class="btn btn-secondary" onclick="viewTicketDetails('${ticket.ticketID}')" style="padding: 6px 12px; font-size: 0.85em;">View</button>`;
-                }
-                
-                html += `
-                    <tr class="${rowClass}">
-                        <td><strong>${ticket.ticketID}</strong></td>
-                        <td>${ticket.requestorName}</td>
-                        <td>${ticket.requestType}</td>
-                        <td>${ticket.location}</td>
-                        <td><span class="${priorityClass}">${ticket.priority}</span></td>
-                        <td>${ticket.age}</td>
-                        <td>${actions}</td>
-                    </tr>
-                `;
-            });
-            
-            html += '</tbody></table>';
-            return html;
-        }
-
-        function parseAgeToMinutes(ageStr) {
-            // Convert "45m" or "1h 30m" to minutes
-            let minutes = 0;
-            if (ageStr.includes('h')) {
-                const parts = ageStr.split('h');
-                minutes += parseInt(parts[0]) * 60;
-                if (parts[1]) {
-                    minutes += parseInt(parts[1]);
-                }
-            } else {
-                minutes = parseInt(ageStr);
-            }
-            return minutes;
-        }
-
-        async function acknowledgeTicket(ticketID) {
-            if (!confirm(`Acknowledge ticket ${ticketID}?`)) return;
-            
-            try {
-                const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        action: 'acknowledgeTicket',
-                        ticketID: ticketID,
-                        clerkName: CONFIG.user.name
-                    })
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    loadClerkQueue();
-                } else {
-                    alert('Error: ' + result.message);
                 }
             } catch (error) {
-                console.error('Error:', error);
-                alert('Failed to acknowledge ticket');
+                console.error('Error loading tickets:', error);
+                container.innerHTML = '<div style="color: #c62828; padding: 20px;">Error loading tickets. Please refresh the page.</div>';
             }
         }
 
-        async function showAssignModal(ticketID) {
-            // First, get list of drivers
-            try {
-                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getDrivers`);
-                const drivers = await response.json();
-                
-                let driverOptions = drivers.map(d => 
-                    `<option value="${d.name}">${d.name} (Current: ${d.ticketsToday || 0} tickets)</option>`
-                ).join('');
-                
-                const modal = document.createElement('div');
-                modal.className = 'modal active';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2>Assign Ticket ${ticketID}</h2>
-                            <span class="close-btn" onclick="this.parentElement.parentElement.parentElement.remove()">×</span>
-                        </div>
-                        <div class="form-group">
-                            <label>Select Driver:</label>
-                            <select id="assignDriverSelect">
-                                ${driverOptions}
-                            </select>
-                        </div>
-                        <div class="button-group">
-                            <button class="btn btn-primary" onclick="assignTicketToDriver('${ticketID}')">Assign</button>
-                            <button class="btn btn-secondary" onclick="this.parentElement.parentElement.parentElement.remove()">Cancel</button>
-                        </div>
-                    </div>
-                `;
-                document.body.appendChild(modal);
-            } catch (error) {
-                console.error('Error loading drivers:', error);
-                alert('Failed to load drivers list');
-            }
-        }
+        function createTicketCard(ticket) {
+            const statusClass = `badge-${ticket.status.toLowerCase().replace(' ', '')}`;
+            const priorityBadge = ticket.priority === 'Urgent' ? '<span class="badge badge-urgent">🔴 URGENT</span>' : '';
 
-        async function assignTicketToDriver(ticketID) {
-            const driverName = document.getElementById('assignDriverSelect').value;
-            
-            if (!driverName) {
-                alert('Please select a driver');
-                return;
-            }
-            
-            try {
-                const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        action: 'assignTicket',
-                        ticketID: ticketID,
-                        driverName: driverName
-                    })
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    document.querySelector('.modal').remove();
-                    loadClerkQueue();
-                } else {
-                    alert('Error: ' + result.message);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Failed to assign ticket');
-            }
-        }
-
-        // ====================================================================
-        // DRIVER DASHBOARD
-        // ====================================================================
-
-        function initDriverDashboard() {
-            const navTabs = document.getElementById('navTabs');
-            const tabsContainer = document.getElementById('tabsContainer');
-            
-            navTabs.innerHTML = `
-                <div class="nav-tab active" onclick="switchTab('driver-queue')">My Queue</div>
-            `;
-            
-            tabsContainer.innerHTML = `
-                <div id="driver-queue" class="tab-content active">
-                    <h2 style="color: #667eea; margin-bottom: 20px;">🚚 Driver Dashboard</h2>
-                    
-                    <div class="metrics-grid">
-                        <div class="metric-card">
-                            <h3>My Queue</h3>
-                            <div class="value" id="driverQueueCount">-</div>
-                        </div>
-                        <div class="metric-card" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
-                            <h3>Completed Today</h3>
-                            <div class="value" id="driverCompletedCount">-</div>
+            return `
+                <div class="ticket-card">
+                    <div class="ticket-header">
+                        <div class="ticket-id">${ticket.ticketID}</div>
+                        <div>
+                            <span class="badge ${statusClass}">${ticket.status}</span>
+                            ${priorityBadge}
                         </div>
                     </div>
 
-                    <button class="btn btn-primary" onclick="loadDriverQueue()" style="margin-bottom: 20px;">🔄 Refresh</button>
-                    
-                    <div class="loading" id="driverLoading">
-                        <div class="spinner"></div>
-                        <p style="margin-top: 15px;">Loading your assignments...</p>
-                    </div>
-                    
-                    <div id="driverQueueContent" style="display: none;">
-                        <!-- Current Ticket -->
-                        <div id="currentTicketSection"></div>
-                        
-                        <!-- Queue -->
-                        <h3 style="color: #667eea; margin-bottom: 15px;">📋 Next in My Queue</h3>
-                        <div id="driverQueueList"></div>
-                    </div>
-                </div>
-            `;
-            
-            loadDriverQueue();
-        }
-
-        async function loadDriverQueue() {
-            document.getElementById('driverLoading').style.display = 'flex';
-            document.getElementById('driverQueueContent').style.display = 'none';
-            
-            try {
-                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getDriverQueue&driverEmail=${encodeURIComponent(CONFIG.user.email)}`);
-                const data = await response.json();
-                
-                document.getElementById('driverQueueCount').textContent = data.queueTickets.length;
-                document.getElementById('driverCompletedCount').textContent = data.completedToday;
-                
-                // Display current ticket
-                displayCurrentTicket(data.currentTicket);
-                
-                // Display queue
-                displayDriverQueue(data.queueTickets);
-                
-                document.getElementById('driverLoading').style.display = 'none';
-                document.getElementById('driverQueueContent').style.display = 'block';
-            } catch (error) {
-                console.error('Error loading queue:', error);
-                document.getElementById('driverLoading').style.display = 'none';
-                alert('Error loading your queue');
-            }
-        }
-
-        function displayCurrentTicket(ticket) {
-            const container = document.getElementById('currentTicketSection');
-            
-            if (!ticket) {
-                container.innerHTML = `
-                    <div class="info-message">
-                        <h4>No Active Ticket</h4>
-                        <p>You don't have any ticket currently in progress. Start working on the next ticket in your queue!</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            container.innerHTML = `
-                <div class="current-ticket-card">
-                    <h3>⚡ Currently Working On:</h3>
                     <div class="ticket-info">
-                        <div class="ticket-info-row">
-                            <span><strong>Ticket #:</strong></span>
-                            <span style="font-size: 1.3em;">${ticket.ticketID}</span>
+                        <div class="info-item">
+                            <div class="info-label">Client</div>
+                            <div class="info-value">${ticket.client || 'N/A'}</div>
                         </div>
-                        <div class="ticket-info-row">
-                            <span><strong>Type:</strong></span>
-                            <span>${ticket.requestType}</span>
+                        <div class="info-item">
+                            <div class="info-label">Department</div>
+                            <div class="info-value">${ticket.department || 'N/A'}</div>
                         </div>
-                        <div class="ticket-info-row">
-                            <span><strong>Location:</strong></span>
-                            <span>${ticket.location}</span>
+                        <div class="info-item">
+                            <div class="info-label">Request Type</div>
+                            <div class="info-value">${ticket.requestType}</div>
                         </div>
-                        <div class="ticket-info-row">
-                            <span><strong>Quantity:</strong></span>
-                            <span>${ticket.quantity || 'N/A'}</span>
+                        <div class="info-item">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">${ticket.location}</div>
                         </div>
-                        <div class="ticket-info-row">
-                            <span><strong>Requestor:</strong></span>
-                            <span>${ticket.requestorName}</span>
-                        </div>
-                        <div class="ticket-info-row">
-                            <span><strong>Time Working:</strong></span>
-                            <span>${ticket.age}</span>
+                        <div class="info-item">
+                            <div class="info-label">Created</div>
+                            <div class="info-value">${ticket.createdAt}</div>
                         </div>
                     </div>
-                    <div class="button-group">
-                        <button class="btn btn-success" onclick="completeCurrentTicket('${ticket.ticketID}')" style="background: #27ae60;">✅ Mark Complete</button>
-                        <button class="btn btn-secondary" onclick="viewTicketDetails('${ticket.ticketID}')">View Details</button>
+
+                    <div class="info-item">
+                        <div class="info-label">Description</div>
+                        <div class="info-value">${ticket.description}</div>
                     </div>
+
+                    ${createTimeline(ticket)}
                 </div>
             `;
         }
 
-        function displayDriverQueue(tickets) {
-            const container = document.getElementById('driverQueueList');
-            
-            if (tickets.length === 0) {
-                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✅</div><h3>Queue is empty</h3><p>All caught up!</p></div>';
-                return;
-            }
-            
-            let html = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ticket #</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                            <th>Priority</th>
-                            <th>Age</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-            
-            tickets.forEach(ticket => {
-                const priorityClass = ticket.priority === 'Urgent' ? 'priority-urgent' : 'priority-normal';
-                
-                html += `
-                    <tr>
-                        <td><strong>${ticket.ticketID}</strong></td>
-                        <td>${ticket.requestType}</td>
-                        <td>${ticket.location}</td>
-                        <td><span class="${priorityClass}">${ticket.priority}</span></td>
-                        <td>${ticket.age}</td>
-                        <td>
-                            <button class="btn btn-primary" onclick="startTicket('${ticket.ticketID}')" style="padding: 6px 12px; font-size: 0.85em;">Start</button>
-                        </td>
-                    </tr>
-                `;
-            });
-            
-            html += '</tbody></table>';
-            container.innerHTML = html;
-        }
+        function createTimeline(ticket) {
+            let timeline = '<div class="timeline">';
 
-        async function startTicket(ticketID) {
-            if (!confirm(`Start working on ticket ${ticketID}?`)) return;
-            
-            try {
-                const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        action: 'startTicket',
-                        ticketID: ticketID,
-                        driverName: CONFIG.user.name
-                    })
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    loadDriverQueue();
-                } else {
-                    alert('Error: ' + result.message);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Failed to start ticket');
-            }
-        }
-
-        async function completeCurrentTicket(ticketID) {
-            const notes = prompt('Add any notes about this task (optional):');
-            
-            try {
-                const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        action: 'completeTicket',
-                        ticketID: ticketID,
-                        driverName: CONFIG.user.name,
-                        notes: notes
-                    })
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    alert('✅ Ticket marked as complete!');
-                    loadDriverQueue();
-                } else {
-                    alert('Error: ' + result.message);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Failed to complete ticket');
-            }
-        }
-
-        // ====================================================================
-        // MANAGER DASHBOARD
-        // ====================================================================
-
-        function initManagerDashboard() {
-            const navTabs = document.getElementById('navTabs');
-            const tabsContainer = document.getElementById('tabsContainer');
-            
-            navTabs.innerHTML = `
-                <div class="nav-tab active" onclick="switchTab('manager-overview')">Overview</div>
-            `;
-            
-            tabsContainer.innerHTML = `
-                <div id="manager-overview" class="tab-content active">
-                    <h2 style="color: #667eea; margin-bottom: 20px;">📊 Manager Dashboard</h2>
-                    
-                    <button class="btn btn-primary" onclick="loadManagerDashboard()" style="margin-bottom: 20px;">🔄 Refresh</button>
-                    
-                    <div class="loading" id="managerLoading">
-                        <div class="spinner"></div>
-                        <p style="margin-top: 15px;">Loading dashboard...</p>
-                    </div>
-                    
-                    <div id="managerDashboardContent" style="display: none;">
-                        <div class="metrics-grid">
-                            <div class="metric-card">
-                                <h3>Active Tickets</h3>
-                                <div class="value" id="mgrActiveCount">-</div>
-                            </div>
-                            <div class="metric-card" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
-                                <h3>Resolved Today</h3>
-                                <div class="value" id="mgrResolvedCount">-</div>
-                            </div>
-                            <div class="metric-card urgent">
-                                <h3>🔥 Urgent Active</h3>
-                                <div class="value" id="mgrUrgentCount">-</div>
-                            </div>
-                            <div class="metric-card">
-                                <h3>Avg Resolution Time</h3>
-                                <div class="value" id="mgrAvgTime">-</div>
-                            </div>
-                        </div>
-
-                        <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Status Breakdown</h3>
-                        <div id="statusBreakdown"></div>
-                        
-                        <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">By Request Type</h3>
-                        <div id="typeBreakdown"></div>
-                        
-                        <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Driver Performance</h3>
-                        <div id="driverPerformance"></div>
-                    </div>
+            timeline += `
+                <div class="timeline-item completed">
+                    <div class="timeline-label">🟢 Created</div>
+                    <div class="timeline-value">${ticket.createdAt}</div>
+                    <div class="timeline-value">By: ${ticket.requestorName}</div>
                 </div>
             `;
-            
-            loadManagerDashboard();
-        }
 
-        async function loadManagerDashboard() {
-            document.getElementById('managerLoading').style.display = 'flex';
-            document.getElementById('managerDashboardContent').style.display = 'none';
-            
-            try {
-                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getManagerDashboard`);
-                const data = await response.json();
-                
-                // Update metrics
-                document.getElementById('mgrActiveCount').textContent = data.metrics.totalActive;
-                document.getElementById('mgrResolvedCount').textContent = data.metrics.totalResolved;
-                document.getElementById('mgrUrgentCount').textContent = data.metrics.urgentActive;
-                document.getElementById('mgrAvgTime').textContent = data.metrics.avgResolutionTime + ' min';
-                
-                // Display breakdowns
-                displayStatusBreakdown(data.statusCounts);
-                displayTypeBreakdown(data.typeCounts);
-                displayDriverPerformance(data.driverStats);
-                
-                document.getElementById('managerLoading').style.display = 'none';
-                document.getElementById('managerDashboardContent').style.display = 'block';
-            } catch (error) {
-                console.error('Error loading dashboard:', error);
-                document.getElementById('managerLoading').style.display = 'none';
-                alert('Error loading manager dashboard');
-            }
-        }
-
-        function displayStatusBreakdown(statusCounts) {
-            const container = document.getElementById('statusBreakdown');
-            
-            let html = `
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
-            `;
-            
-            Object.keys(statusCounts).forEach(status => {
-                html += `
-                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
-                        <div style="font-size: 2em; font-weight: bold; color: #667eea;">${statusCounts[status]}</div>
-                        <div style="color: #666; font-size: 0.9em;">${status}</div>
+            if (ticket.acknowledgedAt) {
+                timeline += `
+                    <div class="timeline-item completed">
+                        <div class="timeline-label">🟢 Acknowledged</div>
+                        <div class="timeline-value">${ticket.acknowledgedAt}</div>
+                        <div class="timeline-value">By: ${ticket.acknowledgedBy}</div>
                     </div>
                 `;
-            });
-            
-            html += '</div>';
-            container.innerHTML = html;
-        }
+            }
 
-        function displayTypeBreakdown(typeCounts) {
-            const container = document.getElementById('typeBreakdown');
-            
-            const total = Object.values(typeCounts).reduce((sum, count) => sum + count, 0);
-            
-            let html = '<div style="display: flex; flex-direction: column; gap: 15px;">';
-            
-            Object.keys(typeCounts).forEach(type => {
-                const count = typeCounts[type];
-                const percentage = total > 0 ? ((count / total) * 100).toFixed(1) : 0;
-                
-                html += `
-                    <div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                            <strong>${type}</strong>
-                            <span>${count} (${percentage}%)</span>
-                        </div>
-                        <div style="background: #e0e0e0; height: 25px; border-radius: 12px; overflow: hidden;">
-                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100%; width: ${percentage}%; transition: width 0.3s;"></div>
-                        </div>
+            if (ticket.assignedTo) {
+                timeline += `
+                    <div class="timeline-item completed">
+                        <div class="timeline-label">🟢 Assigned</div>
+                        <div class="timeline-value">${ticket.assignedAt || 'N/A'}</div>
+                        <div class="timeline-value">To: ${ticket.assignedTo}</div>
                     </div>
                 `;
-            });
-            
-            html += '</div>';
-            container.innerHTML = html;
-        }
-
-        function displayDriverPerformance(driverStats) {
-            const container = document.getElementById('driverPerformance');
-            
-            if (Object.keys(driverStats).length === 0) {
-                container.innerHTML = '<p style="color: #666;">No driver data available</p>';
-                return;
             }
-            
-            let html = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Driver</th>
-                            <th>Active Tickets</th>
-                            <th>Completed Today</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-            
-            Object.keys(driverStats).forEach(driver => {
-                const stats = driverStats[driver];
-                const statusIcon = stats.active > 0 ? '🟢 Working' : '🔴 Available';
-                
-                html += `
-                    <tr>
-                        <td><strong>${driver}</strong></td>
-                        <td>${stats.active}</td>
-                        <td>${stats.today}</td>
-                        <td>${statusIcon}</td>
-                    </tr>
-                `;
-            });
-            
-            html += '</tbody></table>';
-            container.innerHTML = html;
-        }
 
-        // ====================================================================
-        // SHARED FUNCTIONS
-        // ====================================================================
-
-        function switchTab(tabId) {
-            // Hide all tabs
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Remove active from all nav tabs
-            document.querySelectorAll('.nav-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Show selected tab
-            document.getElementById(tabId).classList.add('active');
-            
-            // Make nav tab active
-            event.target.classList.add('active');
-        }
-
-        async function viewTicketDetails(ticketID) {
-            try {
-                const response = await fetch(`${CONFIG.APPS_SCRIPT_URL}?action=getTicketDetails&ticketID=${ticketID}`);
-                const ticket = await response.json();
-                
-                if (ticket.error) {
-                    alert('Ticket not found');
-                    return;
-                }
-                
-                const modal = document.createElement('div');
-                modal.className = 'modal active';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2>Ticket ${ticket.ticketID}</h2>
-                            <span class="close-btn" onclick="this.parentElement.parentElement.parentElement.remove()">×</span>
-                        </div>
-                        
-                        <div style="margin: 20px 0;">
-                            <div class="ticket-info-row" style="margin-bottom: 15px;">
-                                <strong>Status:</strong>
-                                <span class="status-${ticket.status.toLowerCase().replace(' ', '')}">${ticket.status}</span>
-                            </div>
-                            <div class="ticket-info-row" style="margin-bottom: 15px;">
-                                <strong>Priority:</strong>
-                                <span class="${ticket.priority === 'Urgent' ? 'priority-urgent' : 'priority-normal'}">${ticket.priority}</span>
-                            </div>
-                        </div>
-                        
-                        <h3 style="color: #667eea; margin-top: 20px;">Details</h3>
-                        <table style="margin-top: 10px;">
-                            <tr><td><strong>Type:</strong></td><td>${ticket.requestType}</td></tr>
-                            <tr><td><strong>Requestor:</strong></td><td>${ticket.requestorName}</td></tr>
-                            <tr><td><strong>Department:</strong></td><td>${ticket.department}</td></tr>
-                            <tr><td><strong>Location:</strong></td><td>${ticket.location}</td></tr>
-                            <tr><td><strong>Quantity:</strong></td><td>${ticket.quantity || 'N/A'}</td></tr>
-                            <tr><td><strong>Description:</strong></td><td>${ticket.description}</td></tr>
-                        </table>
-                        
-                        <h3 style="color: #667eea; margin-top: 20px;">Timeline</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-icon">📝</div>
-                                <div class="timeline-content">
-                                    <strong>Created</strong>
-                                    <small>${ticket.createdAt} by ${ticket.requestorName}</small>
-                                </div>
-                            </div>
-                            ${ticket.acknowledgedAt ? `
-                                <div class="timeline-item">
-                                    <div class="timeline-icon">✅</div>
-                                    <div class="timeline-content">
-                                        <strong>Acknowledged</strong>
-                                        <small>${ticket.acknowledgedAt} by ${ticket.acknowledgedBy}</small>
-                                    </div>
-                                </div>
-                            ` : ''}
-                            ${ticket.assignedAt ? `
-                                <div class="timeline-item">
-                                    <div class="timeline-icon">👤</div>
-                                    <div class="timeline-content">
-                                        <strong>Assigned to ${ticket.assignedTo}</strong>
-                                        <small>${ticket.assignedAt}</small>
-                                    </div>
-                                </div>
-                            ` : ''}
-                            ${ticket.startedAt ? `
-                                <div class="timeline-item">
-                                    <div class="timeline-icon">⚡</div>
-                                    <div class="timeline-content">
-                                        <strong>Started</strong>
-                                        <small>${ticket.startedAt} by ${ticket.startedBy}</small>
-                                    </div>
-                                </div>
-                            ` : ''}
-                            ${ticket.completedAt ? `
-                                <div class="timeline-item">
-                                    <div class="timeline-icon">✔️</div>
-                                    <div class="timeline-content">
-                                        <strong>Completed</strong>
-                                        <small>${ticket.completedAt}</small>
-                                    </div>
-                                </div>
-                            ` : ''}
-                            ${ticket.closedAt ? `
-                                <div class="timeline-item">
-                                    <div class="timeline-icon">🔒</div>
-                                    <div class="timeline-content">
-                                        <strong>Closed</strong>
-                                        <small>${ticket.closedAt} by ${ticket.closedBy}</small>
-                                    </div>
-                                </div>
-                            ` : ''}
-                        </div>
-                        
-                        ${ticket.notes ? `
-                            <h3 style="color: #667eea; margin-top: 20px;">Notes</h3>
-                            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; white-space: pre-wrap;">
-                                ${ticket.notes}
-                            </div>
-                        ` : ''}
-                        
-                        ${ticket.resolutionTime ? `
-                            <div class="info-message" style="margin-top: 20px;">
-                                <strong>Resolution Time:</strong> ${ticket.resolutionTime} minutes
-                            </div>
-                        ` : ''}
-                        
-                        <div style="margin-top: 20px; text-align: center;">
-                            ${CONFIG.user.role === 'clerk' && ticket.status === 'Complete' ? `
-                                <button class="btn btn-success" onclick="closeTicketFromModal('${ticket.ticketID}')">Close Ticket</button>
-                            ` : ''}
-                            <button class="btn btn-secondary" onclick="this.parentElement.parentElement.parentElement.remove()">Close</button>
-                        </div>
+            if (ticket.startedAt) {
+                timeline += `
+                    <div class="timeline-item completed">
+                        <div class="timeline-label">🔵 In Progress</div>
+                        <div class="timeline-value">${ticket.startedAt}</div>
                     </div>
                 `;
-                document.body.appendChild(modal);
-            } catch (error) {
-                console.error('Error loading ticket details:', error);
-                alert('Failed to load ticket details');
             }
-        }
 
-        async function closeTicketFromModal(ticketID) {
-            if (!confirm(`Close ticket ${ticketID}? This will mark it as resolved and move it to archive.`)) return;
-            
-            try {
-                const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        action: 'closeTicket',
-                        ticketID: ticketID,
-                        clerkName: CONFIG.user.name
-                    })
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    alert('✅ Ticket closed and archived!');
-                    document.querySelector('.modal').remove();
-                    loadClerkQueue();
-                } else {
-                    alert('Error: ' + result.message);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Failed to close ticket');
+            if (ticket.completedAt) {
+                timeline += `
+                    <div class="timeline-item completed">
+                        <div class="timeline-label">🟣 Completed</div>
+                        <div class="timeline-value">${ticket.completedAt}</div>
+                    </div>
+                `;
             }
-        }
 
-        // Initialize on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            // Show login screen
-            document.getElementById('loginScreen').style.display = 'flex';
-        });
+            if (ticket.closedAt) {
+                timeline += `
+                    <div class="timeline-item completed">
+                        <div class="timeline-label">🟢 Resolved</div>
+                        <div class="timeline-value">${ticket.closedAt}</div>
+                        <div class="timeline-value">By: ${ticket.closedBy || 'N/A'}</div>
+                    </div>
+                `;
+            }
+
+            timeline += '</div>';
+            return timeline;
+        }
     </script>
 </body>
 </html>
